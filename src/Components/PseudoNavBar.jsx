@@ -1,7 +1,16 @@
+import { motion } from "motion/react"
+
 const PseudoNavBar = () => {
     return (
-        <div className="font-poppins pt-10 px-8 max-w-7xl mx-auto">
 
+        <motion.div
+            className="font-poppins pt-10 px-8 max-w-7xl mx-auto"
+            initial={{ z: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+
+        >
             {/* Grid Layout for Centering */}
             <div className="grid grid-cols-3 items-center">
 
@@ -35,8 +44,8 @@ const PseudoNavBar = () => {
                     </button>
                 </div>
             </div>
+        </motion.div>
 
-        </div>
     );
 };
 
